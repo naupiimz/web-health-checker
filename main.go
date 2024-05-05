@@ -26,10 +26,14 @@ func main() {
 			domain.Port = "80"
 		}
 
-		domain.Check()
+		fmt.Println(domain.Check())
 	}
 
 	if server != nil && *server != false {
+		server := Server{
+			Address: ":8000",
+		}
+		server.Start()
 		fmt.Println("Start the server")
 	}
 }
