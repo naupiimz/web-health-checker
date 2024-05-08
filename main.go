@@ -12,7 +12,7 @@ type Checker interface {
 func main() {
 	url := flag.String("u", "", "Enter the target url")
 	port := flag.String("p", "", "Enter specific port")
-	server := flag.Bool("s", false, "Start rest api server")
+	server := flag.Bool("s", true, "Start rest api server")
 
 	flag.Parse()
 
@@ -33,7 +33,7 @@ func main() {
 		server := Server{
 			Address: ":8000",
 		}
+		fmt.Println("Start the server...")
 		server.Start()
-		fmt.Println("Start the server")
 	}
 }
